@@ -1,0 +1,12 @@
+Conceptual interfaces:
+clk -> FPGA oscillator input
+reset -> reset button
+btn_set_hour -> hour increment
+btn_set_min -> minute increment
+btn_format -> 12/24-hour selection
+seg[6:0] -> A-G segment outputs
+an[5:0] -> six digit enables
+dp -> decimal point/status
+
+Exact Spartan-6 board pins, oscillator frequency, display polarity, and voltage standard
+must be taken from the board schematic/manual.

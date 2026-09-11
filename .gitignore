@@ -1,0 +1,13 @@
+# Xilinx generated files
+*.log
+*.jou
+*.xrpt
+*.ngc
+*.ngd
+*.ncd
+*.bit
+*.bin
+*.mcs
+xst/
+isim/
+_build/
