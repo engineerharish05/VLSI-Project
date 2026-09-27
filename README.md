@@ -1,32 +1,43 @@
-# Digital Time Display Device — Spartan-6
+# Digital Time Display — Spartan-6
 
-Verilog HDL project for a configurable digital clock:
-- HH:MM:SS
+A synthesizable Verilog RTL project for a configurable digital time display using a Xilinx Spartan-6 FPGA.
+
+## Features
+- HH:MM:SS display
 - 12/24-hour mode
-- hour/minute setting
-- multiplexed 6-digit 7-segment display
-- synchronized/debounced buttons
+- Hour and minute adjustment
+- Multiplexed 6-digit 7-segment display
+- Synchronized, debounced buttons
+- Simulation/testbench support
 
 ## Toolchain
-Xilinx ISE for Spartan-6. RTL is Verilog-2001 and intended to be synthesizable.
+- Verilog-2001
+- Xilinx ISE
+- Spartan-6 FPGA
 
-## Important
-Spartan-6 boards differ in clock frequency, pinout, display polarity, and display type.
-The RTL assumes a 50 MHz clock by default. Change `CLK_FREQ_HZ` in
-`rtl/digital_clock_top.v` if required.
+The design assumes a **50 MHz clock** by default. Update `CLK_FREQ_HZ` in `rtl/digital_clock_top.v` for your board.
 
-`constraints/board_template.ucf` is intentionally a TEMPLATE. Do not use it
-until you replace placeholders with pins from your exact board schematic.
+> **Board note:** `constraints/board_template.ucf` is a template. Replace placeholders with the pin assignments from your exact board schematic before programming hardware.
 
 ## Controls
-btn_set_hour: increment hour
-btn_set_min: increment minute
-btn_format: toggle 24/12-hour display
-reset: active-high
+| Input | Function |
+|---|---|
+| `btn_set_hour` | Increment hour |
+| `btn_set_min` | Increment minute |
+| `btn_format` | Toggle 12/24-hour format |
+| `reset` | Active-high reset |
 
-## Repository layout
-rtl/          synthesizable Verilog
-simulation/   testbench
-constraints/  UCF template
-docs/         project documentation
-screenshots/  add simulation/ISE screenshots here
+## Repository structure
+```
+rtl/          Synthesizable Verilog RTL
+simulation/   Testbench and simulation files
+constraints/  UCF constraint template
+docs/         Project documentation
+screenshots/  Simulation / ISE screenshots
+```
+
+## Project goal
+This project is part of my hardware-design portfolio, focused on RTL design, FPGA development and digital systems.
+
+---
+Built by **Harish P** • ECE / VLSI / Digital Design
