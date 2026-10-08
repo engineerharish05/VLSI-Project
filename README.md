@@ -10,9 +10,9 @@ The following image is the Vivado simulation result provided for this project:
 
 ## Team
 
-- **Harish P**
 - **Anush K**
 - **Abdul Adhil S**
+- **Harish P**
 
 ## Features
 
