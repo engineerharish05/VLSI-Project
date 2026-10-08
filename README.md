@@ -1,6 +1,12 @@
 # Digital time display device with multiformat virtual interface configuration
 
-A Verilog/Vivado digital time-display project covering RTL design, seven-segment display control, time counting, and behavioral simulation.
+A Verilog/Vivado digital time-display project with a clean, focused repository structure for the submitted design and behavioral simulation.
+
+## Vivado simulation showcase
+
+The following image is the Vivado simulation result provided for this project:
+
+![Vivado behavioral simulation](IMG-20261005-WA0006.jpg)
 
 ## Team
 
@@ -8,61 +14,44 @@ A Verilog/Vivado digital time-display project covering RTL design, seven-segment
 - **Anush K**
 - **Abdul Adhil S**
 
-## Project implementations
-
-### 1. Spartan-6 RTL implementation
-The repository retains the original synthesizable Spartan-6-oriented RTL, constraints template, documentation, and simulation support.
-
-### 2. Vivado behavioral simulation
-The newly organized behavioral implementation is based on the submitted Vivado Verilog source and provides:
+## Features
 
 - HH:MM:SS time representation
-- 12/24-hour mode input
+- 12/24-hour mode
 - 6-digit seven-segment multiplexing
-- Numerical hour/minute/second outputs
+- Numerical hour, minute, and second outputs
 - AM/PM output
-- Dedicated simulation testbench
+- Dedicated behavioral simulation testbench
 
 ## Repository structure
 
 ```
 rtl/
-├── behavioral_time_display/
-│   ├── clock_divider.v
-│   ├── time_counter.v
-│   ├── seven_segment.v
-│   ├── time_display.v
-│   └── top.v
-└── [existing Spartan-6 RTL modules]
+└── behavioral_time_display/
+    ├── clock_divider.v
+    ├── time_counter.v
+    ├── seven_segment.v
+    ├── time_display.v
+    └── top.v
 
 simulation/
-├── behavioral/
-│   └── tb_time_display.v
-└── [existing simulation files]
-
-constraints/
-└── [board constraint files]
+└── behavioral/
+    └── tb_time_display.v
 
 docs/
 ├── behavioral_simulation.md
 └── team.md
 
-screenshots/
-└── Vivado behavioral simulation reference
+IMG-20261005-WA0006.jpg
 ```
 
-## Vivado behavioral simulation
+## Vivado
 
-For the newly added behavioral version, add the files under `rtl/behavioral_time_display/` as design sources and `simulation/behavioral/tb_time_display.v` as the simulation source. Set `top` as the design top and `tb_time_display` as the simulation top.
+Use the files in `rtl/behavioral_time_display/` as the design sources and `simulation/behavioral/tb_time_display.v` as the simulation source.
 
-> The supplied source uses `DIV_VALUE = 10` for behavioral simulation. This is intended for simulation rather than a real 1 Hz FPGA clock divider.
-
-## Existing project notes
-
-The original project documentation describes a 50 MHz clock assumption for the Spartan-6 implementation. The board UCF is a template and should be matched to the exact FPGA board before hardware programming.
+The behavioral implementation uses `DIV_VALUE = 10` for simulation. This is intended for simulation rather than a real 1 Hz FPGA clock divider.
 
 ## Toolchain
 
 - Verilog-2001
-- Xilinx Vivado for the behavioral simulation
-- Xilinx ISE / Spartan-6 for the original hardware-oriented implementation
+- Xilinx Vivado
