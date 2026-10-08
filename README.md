@@ -1,4 +1,4 @@
-# Digital Time Display — VLSI Project
+# Digital time display device with multiformat virtual interface configuration
 
 A Verilog/Vivado digital time-display project covering RTL design, seven-segment display control, time counting, and behavioral simulation.
 
